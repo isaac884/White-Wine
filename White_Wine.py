@@ -15,17 +15,21 @@ import io
 import seaborn as sns 
 import matplotlib.pyplot as plt
 
+def load_data(file):
+    return pd.read_csv(file, delimiter=";", quoting=1)
+
+
+
 uploaded_file = st.sidebar.file_uploader("Please upload your dataset.csv file", type="csv")
 
 if uploaded_file is not None:
-    df = pd.read_csv(uploaded_file, delimiter = ";", quoting=1)
+    df = load_data(uploaded_file)
     st.write(" ")
 else:
     st.write(" ")
 
 
-def load_data(file):
-    return pd.read_csv(file, delimiter = ";", quoting = 1)
+
 
 def split_data(X, y, test_size=0.2, random_state=42):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
@@ -87,7 +91,6 @@ elif page == "Model Training":
             y_col = st.selectbox("Select target column (y):", df.columns.tolist())
             if y_col in X_col:
                 st.error("Target column (y) cannot be one of the feature columns (X). Please choose distinct columns.")
-
             elif X_col and y_col:
                 
                     
@@ -141,6 +144,10 @@ elif page == "Model Training":
                 st.write("Random Forest Cohen's Kappa Score: ", cohen_kappa_score(y_test, y_pred))
                 st.write("Random Forest R2 Score: ", r2_score(y_test, y_pred))
                 st.write("Random Forest Mean Squared Error: ", mean_squared_error(y_test, y_pred))
+                
+                f1 = f1_score(y_test, y_pred, average='binary')
+                st.write("Random Forest F1 Score: ", f1)
+
                 st.subheader("Predicted Wine Quality")
                 st.write("The predicted wine quality is:", y_pred)
 
@@ -159,6 +166,8 @@ elif page == "Model Training":
                 st.write("SVC Cohen's Kappa Score: ", cohen_kappa_score(y_test, y_pred))
                 st.write("SVC R2 Score: ", r2_score(y_test, y_pred))
                 st.write("SVC Mean Squared Error: ", mean_squared_error(y_test, y_pred))
+                f1 = f1_score(y_test, y_pred, average='binary')
+                st.write("SVC F1 Score: ", f1)
                 st.subheader("Predicted Wine Quality")
                 st.write("The predicted wine quality is:", y_pred)
 
@@ -177,6 +186,8 @@ elif page == "Model Training":
                 st.write("Logistic Regression Cohen's Kappa Score: ", cohen_kappa_score(y_test, y_pred))
                 st.write("Logistic Regression R2 Score: ", r2_score(y_test, y_pred))
                 st.write("Logistic Regression Mean Squared Error: ", mean_squared_error(y_test, y_pred))
+                f1 = f1_score(y_test, y_pred, average='binary')
+                st.write("Logistic Regression F1 Score: ", f1)
                 st.subheader("Predicted Wine Quality")
                 st.write("The predicted wine quality is:", y_pred)
 
