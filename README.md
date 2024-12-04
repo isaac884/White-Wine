@@ -16,7 +16,7 @@
 ## How to Use
 1. **Install Requirements**  
    Ensure Python is installed on your system. Then, install the required libraries:
-   ```bash
+   ```bash:
    pip install streamlit
    pip install scikit-learn
    pip install pandas
@@ -30,7 +30,7 @@
 
 3. **Run the App**  
    Download the Python script and run the app using Streamlit:
-   ```bash
+   ```bash:
    streamlit run White_Wine.py
    ```
 
