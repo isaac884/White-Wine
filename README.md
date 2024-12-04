@@ -47,8 +47,8 @@
 7. **Visualize Data**  
    Use the "Chart" page to create scatter plots or histograms of the data.
 
-## Example Dataset
-This app is designed to work with datasets like `winequality-white.csv`, which contains columns like acidity, sugar, alcohol, and the target column for wine quality.
+## Dataset
+This app is designed to work with datasets like `winequality-white.csv`, which contains columns like acidity, alcohol, and the target column for wine quality.
 
 ## Libraries
 This project uses the following Python libraries:
