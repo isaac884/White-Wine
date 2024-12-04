@@ -31,7 +31,7 @@
 3. **Run the App**  
    Download the Python script and run the app using Streamlit:
    ```bash
-   streamlit run 01.py
+   streamlit run White_Wine.py
    ```
 
 4. **Upload Dataset**  
@@ -58,7 +58,7 @@ This project uses the following Python libraries:
 - `seaborn` and `matplotlib` for data visualization.
 
 ## Files
-- `01.py`: Main script for the app.
+- `White_Wine.py`: Main script for the app.
 - `requirements.txt`: A list of required Python libraries.
 - `winequality-white.csv`: The dataset used for prediction.
 - `Procfile`: For deployment (e.g., on Heroku).
