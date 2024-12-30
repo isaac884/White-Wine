@@ -234,7 +234,7 @@ elif page == "Model Training":
                 with st.expander("### Confusion Matrix"):
                     SVCmatrix = confusion_matrix(y_test, y_pred)
                     fig, ax = plt.subplots(figsize=(8, 6))
-                    sns.heatmap(SVCmatrix, annot=True, fmt="d", cmap="red", ax=ax) 
+                    sns.heatmap(SVCmatrix, annot=True, fmt="d", cmap="Blues", ax=ax) 
                     ax.set_title("Confusion Matrix")
                     st.pyplot(fig)
                 st.write("")
@@ -268,7 +268,7 @@ elif page == "Model Training":
                 with st.expander("### Confusion Matrix"):
                     LRmatrix = confusion_matrix(y_test, y_pred)
                     fig, ax = plt.subplots(figsize=(8, 6))
-                    sns.heatmap(LRmatrix, annot=True, fmt="d", cmap="red", ax=ax) 
+                    sns.heatmap(LRmatrix, annot=True, fmt="d", cmap="Blues", ax=ax) 
                     ax.set_title("Confusion Matrix")
                     st.pyplot(fig)
                 st.write("")
